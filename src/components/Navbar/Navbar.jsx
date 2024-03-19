@@ -1,13 +1,9 @@
+// Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar({ setSelectedModule }) {
-  // Function to handle module selection
-  const handleModuleSelect = (module) => {
-    setSelectedModule(module);
-  };
-
+function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div className="container">
@@ -24,14 +20,13 @@ function Navbar({ setSelectedModule }) {
               <Link className="nav-link" to="/about">About</Link>
             </li>
             <li className="nav-item dropdown">
-              <button className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link className="nav-link dropdown-toggle" to="/module" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Module
-              </button>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                {/* Pass module name to handleModuleSelect */}
-                <li><button className="dropdown-item" onClick={() => handleModuleSelect('HTML')}>HTML</button></li>
-                <li><button className="dropdown-item" onClick={() => handleModuleSelect('CSS')}>CSS</button></li>
-                <li><button className="dropdown-item" onClick={() => handleModuleSelect('JavaScript')}>JavaScript</button></li>
+                <li><Link className="dropdown-item" to="/module">HTML</Link></li>
+                <li><Link className="dropdown-item" to="/module">CSS</Link></li>
+                <li><Link className="dropdown-item" to="/module">JavaScript</Link></li>
               </ul>
             </li>
           </ul>
