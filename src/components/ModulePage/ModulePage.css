@@ -1,0 +1,80 @@
+/* ModulePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root {
+    --main-color: #393536; 
+    --secondry-color: #218575;
+    --accent-color: #ff680a;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-module {
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+    padding: 50px;
+    min-height: 600px;
+    justify-content: center;
+}
+
+.description-section {
+  background-color: white; /* Light gray background for description section */
+  border: 5px solid var(--main-color); /* Add a 1px solid border with light gray color */
+  padding: 20px; /* Add some padding for better spacing */
+  margin: 10px;
+  min-height: 200px;
+}
+
+.progressbar-section {
+  background-color: white; /* Light gray background for description section */
+  border: 5px solid var(--accent-color); /* Add a 1px solid border with light gray color */
+  padding: 20px; /* Add some padding for better spacing */
+  margin: 10px;
+  min-height: 200px;
+}
+
+.codesnippet-section{
+  background-color: white; /* Light gray background for description section */
+  border: 5px solid var(--secondry-color); /* Add a 1px solid border with light gray color */
+  padding: 20px; /* Add some padding for better spacing */
+  margin: 10px;
+  min-height: 200px;
+}
+
+.tutorial-section {
+  background-color: white; /* Light gray background for description section */
+  border: 5px solid var(--main-color); /* Add a 1px solid border with light gray color */
+  padding: 20px; /* Add some padding for better spacing */
+  margin: 10px;
+}
+
+.cheatsheet-section {
+  background-color: white; /* Light gray background for description section */
+  border: 5px solid var(--accent-color); /* Add a 1px solid border with light gray color */
+  padding: 20px; /* Add some padding for better spacing */
+  margin: 10px;
+}
+
+.quiz-section {
+  background-color: white; /* Light gray background for description section */
+  border: 5px solid var(--main-color); /* Add a 1px solid border with light gray color */
+  padding: 20px; /* Add some padding for better spacing */
+  margin: 10px;
+}
+
+@media(max-width:576px) {
+  .description-section,
+  .progressbar-section,
+  .codesnippet-section,
+  .tutorial-section,
+  .cheatsheet-section,
+  .quiz-section {
+    width: 100%; 
+    margin: 10px;
+    padding: 10px;
+  }
+}
