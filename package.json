@@ -1,5 +1,5 @@
 {
-  "name": "CodeCraftAcademy",
+  "name": "code-craft-academy",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -37,5 +37,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
+  },
+  "vite": {
+    "base": "/CodeCraftAcademy/"
   }
 }
