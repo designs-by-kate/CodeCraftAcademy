@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './description.css';
 
-const Description = ({ selectedModule }) => {
-  // Define descriptions for each language
-  const descriptions = {
-    HTML: "HTML (Hypertext Markup Language) is the standard markup language used to create and design web pages...",
-    CSS: "CSS (Cascading Style Sheets) is a style sheet language used to define the presentation and layout of HTML documents...",
-    JavaScript: "JavaScript (JS) is a versatile programming language commonly used for adding interactivity and dynamic behavior to web pages..."
-  };
+const Description = ({ searchTerm }) => {
+  const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchTerm}`);
+        setDescription(response.data.extract);
+      } catch (error) {
+        console.error('Error fetching Wikipedia data:', error);
+      }
+    };
+
+    fetchData();
+  }, [searchTerm]);
 
   return (
     <div>
-      <h1>{selectedModule}</h1>
-      <p>{descriptions[selectedModule]}</p>
+      <h2>What is {searchTerm}?</h2>
+      <p>{description}</p>
     </div>
   );
-}
+};
 
 export default Description;
