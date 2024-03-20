@@ -1,6 +1,7 @@
 /* Import CSS variables */
 @import "./vars.css";
 
+
 body {
   margin: 0;
   padding: 0;

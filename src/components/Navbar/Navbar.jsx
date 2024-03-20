@@ -1,38 +1,40 @@
-// Navbar.jsx
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import Logo from './logo2.png';
 
 function Navbar() {
+  const [openLinks, setOpenLinks] = useState(false);
+
+  const toggleNavbar = () => {
+    setOpenLinks(!openLinks);
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div className="container">
-        <Link className="navbar-brand" to="/">Navbar</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
-            <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle" to="/module" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Module
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><Link className="dropdown-item" to="/module">HTML</Link></li>
-                <li><Link className="dropdown-item" to="/module">CSS</Link></li>
-                <li><Link className="dropdown-item" to="/module">JavaScript</Link></li>
-              </ul>
-            </li>
-          </ul>
+    <div className="container-fluid text-white">
+      <nav className="navbar">
+        {/* Logo and toggle button */}
+        <div className={`leftSide ${openLinks ? 'open' : 'close'}`}>
+          <Link to="/">
+            <img src={Logo} alt="logo" className="logo" />
+          </Link>
+          {/* <h1>CodeCraft</h1> */}
+          <div className="hiddenLinks"></div>
         </div>
-      </div>
-    </nav>
+        {/* Navbar links */}
+        <div className="rightSide">
+          <Link to="/">Home</Link>
+          <Link to="/about">About Us</Link>
+          {/* <Link to="/module">Module Pages</Link>  */}
+          <Link to="/html">HTML</Link>
+          <Link to="/css">CSS</Link>
+          <Link to="/javascript">JavaScript</Link>
+          <Link to="/quiz">QUIZ</Link>
+          {/* <Link to="/cheatsheets">Cheat Sheets</Link> */}
+          {/* Add more navbar links as needed */}
+        </div>
+      </nav>
+    </div>
   );
 }
 

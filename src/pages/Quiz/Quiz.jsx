@@ -39,12 +39,14 @@ function Quiz() {
   }
 
   return (
-    <>
-      {componentToRender}
+    <div className="quiz-container">
+      <div className="quiz-content">
+        {componentToRender}
+      </div>
       {quizStage !== 'EXIT' && (
         <button className="btn-exit" onClick={handleExit}>EXIT</button>
       )}
-    </>
+    </div>
   );
 }
 
