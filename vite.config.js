@@ -7,7 +7,6 @@ export default defineConfig({
   css: {
     modules: {
       localsConvention: "camelCase",
-    },
-  },
-  base: '/CodeCraftAcademy/',
+    }
+  }
 })
